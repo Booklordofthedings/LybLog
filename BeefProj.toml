@@ -1,0 +1,6 @@
+FileVersion = 1
+
+[Project]
+Name = "LybLog"
+TargetType = "BeefLib"
+StartupObject = "LybLog.Program"
