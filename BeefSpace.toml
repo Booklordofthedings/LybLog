@@ -1,5 +1,6 @@
 FileVersion = 1
-Projects = {LybLog = {Path = "."}}
+Projects = {LybLog = {Path = "."}, Tests = {Path = "Tests"}}
 
 [Workspace]
-StartupProject = "LybLog"
+StartupProject = "Tests"
+PreprocessorMacros = ["LOG_INFO"]

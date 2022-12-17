@@ -1,0 +1,6 @@
+FileVersion = 1
+Dependencies = {corlib = "*", LybLog = "*"}
+
+[Project]
+Name = "Tests"
+StartupObject = "Tests.Program"

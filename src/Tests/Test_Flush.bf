@@ -1,5 +1,0 @@
-namespace LybLog;
-
-extension LybLogger
-{
-}
