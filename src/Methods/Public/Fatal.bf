@@ -8,8 +8,11 @@ extension LybLog
 	[SkipCall]
 	#endif
 	///Unable to continue executing
-	public void Fatal()
+	public void Fatal(String pMessage)
 	{
-
+		if(Settings.LogLevel.Underlying <= LogLevel.Fatal.Underlying)
+		{ //Check wether we should even do this
+			Log(.Fatal, scope .(scope $"[{DateTime.Now}]:[ERROR]:{pMessage}"),pMessage);
+		}
 	}
 }

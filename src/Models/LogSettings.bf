@@ -9,7 +9,7 @@ class LybLogSettings
 	///Current log level, only logs of higher priority than this one will be logged
 	public LogLevel LogLevel {get; set;} = .Info;
 	///Event callback for the log message
-	public Event<delegate void(LogLevel, String)> Callbacks {get; set;} ~ _.Dispose();
+	public ref Event<delegate void(LogLevel, String)> Callbacks {get; set;} ~ _.Dispose(); 
 	///Path in relation to the executing path where the logfile will be save
 	public String LogFilePath {get; set;} = new String(".log") ~ delete _;
 	///How many messages should be written to the cache before it dumps into the logfile
@@ -25,6 +25,7 @@ class LybLogSettings
 	public bool DoIdeLog {get; set; } = false;
 	///Should the logger write to the logfile
 	public bool DoFileLog {get; set; } = false;
+
 	private bool _ClearLogFileOnLoad = false;
 	///Should the logfile be cleared when the application first writes to it
 	public bool ClearLogFileOnLoad

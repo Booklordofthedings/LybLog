@@ -6,8 +6,11 @@ using System.Collections;
 
 class LybLog
 {
-	private static LybLog _Object ~ delete _;
+	private static LybLog _Object ~ delete _; //Singleton instance goes here
+	public LybLogSettings Settings {get; private set;} = new .() ~ delete _; //Storing the settings in its own class makes the base cleaner
+	private List<String> _Cache = new .() ~ Flush(); //Allows file writes to be done in batches
 
+	//Singleton logic
 	public static LybLog Log
 	{
 		get
@@ -22,7 +25,4 @@ class LybLog
 
 	private this() {} //Private constructor so no one else can create this object
 
-
-	public LybLogSettings Settings {get; private set;} = new .() ~ delete _;
-	private List<String> _Cache = new .() ~ delete _;
 }

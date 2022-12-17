@@ -6,8 +6,7 @@ class Program
 {
 	public static void Main()
 	{
-		Log.Settings.Callbacks.Add(new => Test);
-		Log.Settings.Callbacks(.Debug, "Test");
+		Log.Settings.CacheSize = 0;
 
 
 
