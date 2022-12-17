@@ -8,7 +8,7 @@ class LybLog
 {
 	private static LybLog _Object ~ delete _; //Singleton instance goes here
 	public LybLogSettings Settings {get; private set;} = new .() ~ delete _; //Storing the settings in its own class makes the base cleaner
-	private List<String> _Cache = new .() ~ Flush(); //Allows file writes to be done in batches
+	private List<String> _Cache = new .() ~ FlushAndDeleteContainerAndItems!(_); //Allows file writes to be done in batches
 
 	//Singleton logic
 	public static LybLog Log
@@ -17,7 +17,6 @@ class LybLog
 		{
 			if(_Object == null)
 				_Object = new .();
-
 			return _Object;
 		}
 		private set {}
@@ -25,4 +24,10 @@ class LybLog
 
 	private this() {} //Private constructor so no one else can create this object
 
+
+	private mixin FlushAndDeleteContainerAndItems(List<String> pContainer)
+	{
+		Flush();
+		DeleteContainerAndItems!(pContainer);
+	}
 }

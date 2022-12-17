@@ -12,6 +12,7 @@ extension LybLog
 	{
 		if(Settings.LogLevel.Underlying <= LogLevel.Info.Underlying)
 		{ //Check wether we should even do this
+			Console.ForegroundColor = Settings.Colors.Info;
 			Log(.Info, scope .(scope $"[{DateTime.Now}]:[INFO]:{pMessage}"),pMessage);
 		}
 	}

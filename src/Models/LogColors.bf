@@ -1,4 +1,4 @@
-namespace LybLog.Models;
+namespace LybLog;
 
 using System;
 
