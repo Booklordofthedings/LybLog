@@ -1,6 +1,5 @@
 # LybLog - A simple logger for beeflang
 
-### Quickstart
 ```
 namespace MyProgram;
 
@@ -18,5 +17,12 @@ class Program
 ```
 
 ### Table of contents
-- 
+- Installation
+- Basics
+  - Logging
+  - Log Levels
+- Preprocessor
+- Settings
+- Callbacks
+- Formatting
 
