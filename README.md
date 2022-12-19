@@ -35,5 +35,5 @@ class Program
 4. Find LybLog in the explorer and select its .toml file
 5. Rightclick on your project in the workspace
 6. Go to Properties -> Dependencies and check the box that says LybLog
-7. In the file you want to use the logger add a using LybLog statement or simply say LybLog.Log.[Methodname]([Message]). You can now use LybLog in your project
+7. In the file you want to use the logger add a using LybLog statement or simply say LybLog.Log.Methodname(Message). You can now use LybLog in your project
 
