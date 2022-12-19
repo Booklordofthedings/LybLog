@@ -7,13 +7,24 @@ class LybLogSettings
 	//General Settings
 
 	///Current log level, only logs of higher priority than this one will be logged
-	public LogLevel LogLevel {get; set;} = .Info;
+	public LogLevel LogLevel {get; set;} = .Trace;
 
 	///Event callback for the log message
 	public ref Event<delegate void(LogLevel, String)> Callbacks {get; set;} ~ _.Dispose();
- 
+
+ 	private String _LogFilePath = new String(".log") ~ delete _;
 	///Path in relation to the executing path where the logfile will be save
-	public String LogFilePath {get; set;} = new String(".log") ~ delete _;
+	public String LogFilePath {
+		get
+		{
+			return _LogFilePath;
+		}
+		set
+		{
+			delete _LogFilePath;
+			_LogFilePath = new String(value);
+		}
+	} 
 
 	///How many messages should be written to the cache before it dumps into the logfile
 	public uint32 CacheSize {get; set;} = 1;
@@ -21,8 +32,7 @@ class LybLogSettings
 	///What colors to use for the console output
 	public LogColors Colors {get; set;} = new .() ~ delete _;
 
-	public ILoggingFormatter Formater {get; set;} = new LoggingFormatter();
-
+	public ILoggingFormatter DefaultFormater {get; set;} = new LoggingFormatter() ~ delete _;
 	//Toggle Settings
 
 	///Should the logger output to the console

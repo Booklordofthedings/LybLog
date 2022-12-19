@@ -13,7 +13,7 @@ extension LybLog
 		if(Settings.LogLevel.Underlying <= LogLevel.Warn.Underlying)
 		{ //Check wether we should even do this
 			Console.ForegroundColor = Settings.Colors.Warn;
-			Log(.Warn, scope .(scope $"[{DateTime.Now}]:[Warn]:{pMessage}"),pMessage);
+			Log(.Warn, pMessage);
 		}
 	}
 }

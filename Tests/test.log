@@ -1,0 +1,6 @@
+[12/19/2022 10:46:54 AM]:[TRACE]:This is a trace log
+[12/19/2022 10:46:54 AM]:[DEBUG3]:This is a debug log
+[12/19/2022 10:46:54 AM]:[INFO]:This is a info log
+[12/19/2022 10:46:57 AM]:[WARN]:This is a warn log
+[12/19/2022 10:46:57 AM]:[ERROR]:This is a error log
+[12/19/2022 10:46:57 AM]:[FATAL]:This is a fatal log

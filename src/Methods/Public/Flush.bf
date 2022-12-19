@@ -10,7 +10,7 @@ extension LybLog
 	{
 		for(var i in _Cache)
 		{
-			File.WriteAllText(Settings.LogFilePath, scope $"{i}{Environment.NewLine}",true);
+			File.WriteAllText(Settings.LogFilePath, scope $"{i}{Environment.NewLine}",true).IgnoreError();
 		}
 
 		ClearAndDeleteItems(_Cache);

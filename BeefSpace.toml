@@ -3,4 +3,4 @@ Projects = {LybLog = {Path = "."}, Tests = {Path = "Tests"}}
 
 [Workspace]
 StartupProject = "Tests"
-PreprocessorMacros = ["LOG_INFO"]
+PreprocessorMacros = ["LOG_TRACE"]

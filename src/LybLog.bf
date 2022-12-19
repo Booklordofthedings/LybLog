@@ -25,9 +25,5 @@ class LybLog
 	private this() {} //Private constructor so no one else can create this object
 
 
-	private mixin FlushAndDeleteContainerAndItems(List<String> pContainer)
-	{
-		Flush();
-		DeleteContainerAndItems!(pContainer);
-	}
+	
 }
