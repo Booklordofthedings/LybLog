@@ -83,9 +83,7 @@ class Program
 		Console.WriteLine("Once fatal is logged it should be though, since fatal forces a cache empty");
 		Console.ReadLine(.. scope .());
 		Log.Fatal("This is a fatal log");
-
 		Console.ReadLine(.. scope .());
-
 
 	}
 

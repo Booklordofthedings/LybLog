@@ -1,6 +1,6 @@
 # LybLog - A simple logger for beeflang
 
-```
+```cs
 namespace MyProgram;
 
 using LybLog;
@@ -54,13 +54,19 @@ While you can simply just set your log level to a higher level for release build
 The settings object on the logger can be used to set specific settings at runtime.  
 Settings that start with "Do" toggle the thing they are about, such as wether it should log to console or a file  
 Settings also provides a color option for the console, alllows the user to set the logfilepath and has an option to clear the logfile on every new program start.
-
+```
+Log.Settings.DoConsoleLog = true;
+Log.Settings.DoIdeLog = true;
+Log.Settings.Colors.Debug = .Blue;
+Log.Settings.LogFilePath = ".log";
+```
 ### Callbacks 
 Callbacks are a way for the user to get information back about when something is being logged.  
 Settings has a callback even object which the user can register events to that will be called when a log function is called.
 ```
-	Log.Settings.Callbacks.Add(new => MyMethodName);
+Log.Settings.Callbacks.Add(new => MyMethodName);
 ```
 The callback itself gets the log level of the message aswell as an unformatted message string and can do with that whatever it wants.
 
 ### Formatter
+As a user you may need a custom formatter so the settings object also has an IFormatter interface, which you can inherit from to create your own message formatter.
